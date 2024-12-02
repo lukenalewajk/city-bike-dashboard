@@ -25,14 +25,14 @@ import {station_demand_plot} from "./components/station-demand-plot.js";
 <!-- Imports the data from the network and stations data loaders. -->
 ```js
 // loads the network data from the data loader
-// this returns an array!
-const network_array = // your code here
+// this returns an array! 
+const network_array = FileAttachment("./data/network.json").json(); // your code here
 ```
 
 ```js
 // loads the stations data from the data loader
 // this returns a Map!
-const stations_map = // your code here
+const stations_map = FileAttachment("./data/stations.json").json();// your code here
 ```
 
 

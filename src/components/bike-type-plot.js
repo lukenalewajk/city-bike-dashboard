@@ -5,22 +5,28 @@ export function bike_type_plot(data, {width} = {}) {
     // if needed, variables can be created here
 
     return Plot.plot({
-        title: // CHALLENGE 7.1 - Your code here ,
+        title: `Bike Availability at ${station.get('name')}`,
         marks: [
-            // CHALLENGE 7.2
-            // Your code here
+            Plot.barY(data, {
+                x: "bike_type",
+                y: "count",
+                fill: d => d.bike_type === "ebike" ? "#0073e6" : "#ffcc00",
+                tip: true
+              })
         ],
         x: {
-            // CHALLENGE 7.3
-            // Your code here
+            label: "Bike Type"
         },
         y:{
-            // CHALLENGE 7.4
-            // Your code here
+            label: "Available Bikes",
+            domain: [0, totalSlots],
+            ticks: d3.range(0, totalSlots + 1, 5),
+            grid: true
         },
         color: {
-            // CHALLENGE 7.5
-            // Your code here
+            domain: ["ebike", "normal_bike"],
+            range: ["#0073e6", "#ffcc00"],
+            legend: true
         }
     })
 }
